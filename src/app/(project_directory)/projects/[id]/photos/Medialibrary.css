@@ -1,0 +1,272 @@
+/* Additional styles for Media Library Component */
+/* Add these to your global CSS or Tailwind config */
+
+/* Smooth scrolling for modal */
+.modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 4px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.7);
+}
+
+/* Fade in animation for modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.modal-backdrop {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-panel {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Play button pulse animation */
+@keyframes pulse-play {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.play-button-animate {
+  animation: pulse-play 2s ease-in-out infinite;
+}
+
+/* Image load animation */
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.image-fade-in {
+  animation: fadeInImage 0.3s ease-out;
+}
+
+/* Download menu slide down */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.download-menu {
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Selection ring animation */
+@keyframes ring-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.selection-ring {
+  animation: ring-pulse 0.5s ease-out;
+}
+
+/* Tag add animation */
+@keyframes tagPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tag-pop {
+  animation: tagPop 0.3s ease-out;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading skeleton */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Media grid item hover effect */
+.media-item {
+  transition: all 0.2s ease;
+}
+
+.media-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Checkbox custom styles */
+input[type="checkbox"] {
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  animation: checkBounce 0.3s ease;
+}
+
+@keyframes checkBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Video overlay gradient */
+.video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .modal-panel {
+    width: 100% !important;
+  }
+  
+  .media-controls {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+}
+
+/* Print styles */
+@media print {
+  .modal-backdrop,
+  .download-menu,
+  .media-controls {
+    display: none;
+  }
+}
+
+/* Accessibility - Focus states */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Grid item selection state */
+.grid-item-selected {
+  position: relative;
+}
+
+.grid-item-selected::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(37, 99, 235, 0.1);
+  pointer-events: none;
+}
+
+/* Tooltip styles */
+[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  z-index: 1000;
+}

@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --primary: #2563eb; /* blue-600 */
+  --primary-100: #dbeafe;
+
+  --secondary: #16a34a; /* green-600 */
+  --tertiary: #f59e0b; /* amber-500 */
+
+  --xxs: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    --primary: #60a5fa; /* blue-400 */
+
+    --secondary: #4ade80; /* green-400 */
+    --tertiary: #fbbf24; /* amber-400 */
+  }
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-100: var(--primary-100);
+
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+
+  --text-xxs: var(--xxs);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  overflow: hidden;
+
+  /* color: var(--color-primary);
+  font-size: 0.875rem;
+  background-color: var(--color-primary); */
+  scrollbar-width: thin;
+  scrollbar-color: #a2adb7 transparent;
+
+  /* width */
+  *::-webkit-scrollbar {
+    width: 10px;
+    opacity: 0;
+  }
+
+  /* Track */
+  *::-webkit-scrollbar-track {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* Handle */
+  *::-webkit-scrollbar-thumb {
+    background: #a2adb7;
+    border-radius: 10px;
+    border: 2px solid white;
+  }
+
+  *:hover::-webkit-scrollbar {
+    opacity: 0.8;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #a2adb7 transparent;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.menu-item {
+  @apply w-full flex items-center gap-3 px-4 py-1.5 text-left hover:bg-slate-50 transition-colors cursor-pointer;
+}
+
+.icon {
+  @apply w-4 h-4 text-slate-400;
+}
