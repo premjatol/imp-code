@@ -1,0 +1,17 @@
+.ul-parent .page-item {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 100%;
+  font-weight: 400;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.page-item .active {
+  background-color: red;
+  color: red;
+}

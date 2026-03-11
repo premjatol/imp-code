@@ -1,0 +1,19 @@
+/* Sidebar custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #3d3d3d;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Optional: Firefox support */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #3d3d3d transparent;
+}

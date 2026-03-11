@@ -1,0 +1,25 @@
+.custom-scroll-container {
+  scrollbar-gutter: stable;
+  position: relative;
+}
+
+/* Firefox */
+.custom-scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+}
+
+/* Webkit */
+.custom-scroll-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px; /* Horizontal scrollbar */
+}
+
+.custom-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 20px;
+}
