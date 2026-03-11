@@ -1,0 +1,49 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+
+/* Root Variables */
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* Default Body Font */
+body {
+  font-family: var(--font-inter);
+  scrollbar-width: thin;
+  scrollbar-color: #a2adb7 transparent;
+}
+
+/* Heading Font Utility */
+.font-heading {
+  font-family: var(--font-poppins);
+}
+
+/* Webkit Scrollbar */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #a2adb7;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+/* Optional hover effect */
+*:hover::-webkit-scrollbar-thumb {
+  background: #8b96a3;
+}
+
+/* Dark Mode Scrollbar */
+@media (prefers-color-scheme: dark) {
+  *::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-color: #0a0a0a;
+  }
+}
